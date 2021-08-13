@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triaudio|Sua Platafroma de Triagem Neonatal  </title>
+     
+<link rel="stylesheet" href="{% static 'style/main.css' %}">
+<link rel="stylesheet" href="{% static 'style/partials/header.css' %}">
+<link rel="stylesheet" href="{% static 'style/partials/forms.css' %}">
+<link rel="stylesheet" href="{% static 'style/partials/page-profissional.css' %}">
+
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
+</head> 
+<body id="page_profissional">
+     <div id="container">
+      <header class="page-header">
+        <div class="top-bar-container"> 
+            <a href="/">
+             <img src="{% static 'images/back.svg' %}" alt="voltar">
+            </a>
+        </div>
+
+
+        <div class="header-content">
+            <strong>Seja Bem Vindo(a) A Sua Plataforma De Triagem Auditiva Neonatal</strong>
+            <p>O priemeiro passo é preencher esse formulário para sua inscrição</p>
+            
+        </div>
+
+     </header>
+      <main>
+         <form action=""id="creat-class">
+             <fieldset>
+                 <legend>
+                     Dados Pessoais
+                 </legend>
+                 <div class = "input-block">
+                     <label for="name">Nome</label>
+                     <input name="name" id="name" required>
+                 </div>
+                 <div class = "input-block">
+                    <label for="name">Sobrenome</label>
+                    <input name="name" id="name" required>
+                </div>
+                
+                <div  class="input-block">
+                    <label for="cpf">CPF<small>(Somente Números)</small> </label>
+                    <input type="number" name="cpf" id="cpf" required>
+                </div>
+
+                <div class="card">
+                  <label for="sexo">sexo
+                  </label>
+                    
+                    <ul>
+                        <li>
+                            <input type="radio" name="name" id="one" checked />
+                            <label for="one">Feminino</label>
+                            
+                            <div class="check"></div>
+                        </li>
+                        
+                        <li>
+                            <input type="radio" name="name" id="two" />
+                            <label for="two">Masculino</label>
+                            
+                            <div class="check"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="input-block">
+                    <label for="Telefone">Telefone<small>(Somente Números)</small> </label>
+                    <input name="telefone" id="telefone" type="number" required>
+    
+                </div>
+                <div class="input-block">
+                    <label for="Telefone">Telefone 2<small>(Somente Números)</small> </label>
+                    <input name="telefone" id="telefone" type="number" required>
+    
+                </div>
+
+                <div  class="input-block">
+                    <label for="nas">Data de Nascimento<small>(Somente Números)</small> </label>
+                    <input type="number" name="nas" id="nas" required>
+                </div>
+                
+             </fieldset>
+             <fieldset>
+                <legend>Dados Institucional</legend>  
+                <div class = "input-block">
+                 <label for="CNES">CNES</label>
+                 <input name="CNES" id="CNES" type="number" required>
+             </div>
+             <div class="input-block">
+                 <label for="Senha">CNPJ</label>
+                 <input name="CNPJ" id="CNPJ" type="number" required>
+ 
+             </div>
+
+              </fieldset>
+              <fieldset>
+                <legend>Dados Profissionais</legend>  
+                <div  class="input-block">
+                    <label for="Especialidade">Especialidade <small> Fonoaudiólogo(a) ou Médico(a)</small></label>
+                    <input name="Especialidade" id="Especialidade" required>
+                </div>
+                <div class="input-block">
+                    <label for="Senha">CRM ou CFR</label>
+                    <input name="CRM" id="CRM" type="number" required>
+    
+             
+              </fieldset>
+
+             <fieldset>
+               <legend>Seus Dados Para Login</legend>  
+               <div class = "input-block">
+                <label for="email">Email</label>
+                <input name="email" id="email" type="email" required>
+            </div>
+            <div class="input-block">
+                <label for="Senha">Senha</label>
+                <input name="Senha" id="Senha" type="password" required>
+
+            </div>
+            
+            
+
+             </fieldset>
+         </form>
+         <footer>
+             <p>
+                <img src="{% static 'images/warning.svg' %}" alt="Aviso">
+                Importante! <br> Preencha todos os campos 
+             </p>
+             <button type="submit" form="create-class"> Salva Cadastro  </button>
+         </footer>
+       
+         
+     </main>
+    </div>
+    
+
+</body>
+</html>
