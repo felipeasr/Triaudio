@@ -13,6 +13,12 @@ urlpatterns = [
     path('medidasacusticas.html',views.medidasacusticas,name="medidasacusticas"),
     path('Audmetria.html',views.Audiometria,name="Audiometria"),
     path('PEATEintegridade.html',views.Peate,name="Peate"),
-    path('Peatefrequenciaespecifica.html',views.PeateFrequencia,name="Peatefrequencia")
+    path('Peatefrequenciaespecifica.html',views.PeateFrequencia,name="Peatefrequencia"),
+    path('conclusoes.html',views.conclusao,name="conclusao"),
+    path('Agenda.html',views.agenda,name="agenda"),
+    path('Audiometriacondicionada.html',views.audiometriacondicionada,name="audiometriacondicionada"),
+    path('AvaliacoesORL.html',views.avaliacoesORL,name="avaliacoesORL"),
+    path('Avaliacoesmedicas.html',views.avaliacoesmedicas,name="avaliacoesmedicas"),
+    path('emissoesOtoacusticas.html',views.emissoesOtoacusticas,name="EmissoesOtoacusticas"),
 ]
 

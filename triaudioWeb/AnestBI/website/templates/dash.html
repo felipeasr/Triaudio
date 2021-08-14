@@ -153,7 +153,7 @@
 						</a>
 						<ul class="submenu">
 							<li><a href="{%url 'dash' %}">Dashboard</a></li>
-							<li><a href="Agenda.html">Agenda</a></li>
+							<li><a href="{%url 'agenda' %}">Agenda</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
@@ -185,10 +185,10 @@
 							<li><a href="{%url 'medidasacusticas'%}">Emissões Otoacústicas</a></li>
 							<li><a href="{%url 'Audiometria' %}">Audiometria de observação Comportamental</a></li>
 							<li><a href="ui-tooltip-popover.html">Audiometria de Reforço visual</a></li>
-							<li><a href="Audiometriacondicionada.html">Audiometria condicionada</a></li>
-							<li><a href="AvaliacoesORL.html">Diagnosticos/Avaliações ORL</a></li>
-							<li><a href="Avaliacoesmedicas.html">Diagnosticos/Avaliações Médicas</a></li>
-							<li><a href="conclusoes.html">conclusões</a></li>
+							<li><a href="{%url 'audiometriacondicionada' %}">Audiometria condicionada</a></li>
+							<li><a href="{%url 'avaliacoesORL' %}">Diagnosticos/Avaliações ORL</a></li>
+							<li><a href="{%url 'avaliacoesmedicas' %}">Diagnosticos/Avaliações Médicas</a></li>
+							<li><a href="{%url 'conclusao' %}">conclusões</a></li>
 						</ul>
 					</li>
 					
@@ -461,6 +461,7 @@
 	</div>
 	<!-- js -->
 	<!-- {% static '' %} -->
+	<!-- js -->
 	<script src="{% static 'vendors/scripts/core.js' %}"></script>
 	<script src="{% static 'vendors/scripts/script.min.js' %}"></script>
 	<script src="{% static 'vendors/scripts/process.js' %}"></script>

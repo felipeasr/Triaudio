@@ -4,6 +4,23 @@ from django.shortcuts import render
 def Index(request):
     return render(request, 'Index.html', {})
 
+def conclusao(request):
+    return render(request, 'conclusoes.html', {})
+
+def agenda(request):
+    return render(request, 'Agenda.html', {})
+
+def audiometriacondicionada(request):
+    return render(request, 'Audiometriacondicionada.html', {})
+
+def avaliacoesORL(request):
+    return render(request, 'AvaliacoesORL.html', {})
+
+def avaliacoesmedicas(request):
+    return render(request, 'Avaliacoesmedicas.html', {})
+def emissoesOtoacusticas(request):
+    return render(request, 'EmissoesOtoacusticas.html', {})
+
 def dash(request):
     return render(request,'dash.html',{})
 
@@ -38,7 +55,7 @@ def login(request):
 
 def profissional(request):
     return render(request,'Profissional.html',{})
-
+#############################################################codigo exemplo#######################################
 def cadio(request):
     ##<!--SCORE DE LEE-->
     if request.method == "POST":
