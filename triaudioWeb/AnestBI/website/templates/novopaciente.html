@@ -582,7 +582,7 @@ const mascara = (valor) => {
 }
   </script>
   <script>
-    const cpf = document.getElementById('cpf')
+    const cpf = document.getElementById('cpf') // Seletor do campo de CPF
         
     cpf.addEventListener('keypress', (e) => cpfmascara(e.target.value)) // Dispara quando digitado no campo
     cpf.addEventListener('change', (e) => cpfmascara(e.target.value)) 
@@ -595,7 +595,7 @@ const mascara = (valor) => {
 }		
   </script>
   <script>
-    const cep = document.getElementById('cep')
+    const cep = document.getElementById('cep') // Seletor do campo de Cep
             
     cep.addEventListener('keypress', (e) => cepmascara(e.target.value)) // Dispara quando digitado no campo
     cep.addEventListener('change', (e) => cepmascara(e.target.value)) 

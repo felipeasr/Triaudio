@@ -243,7 +243,7 @@
                 <div class ="row">
 				   <div class="col-md-6">
                     <label for="formGroupExampleInput" class="form-label">Data da realização:</label>
-                    <input type="number" class="form-control" id="datateste" placeholder="Data de Teste">
+					<input type="text" class="form-control" id="dataexame" name="dataexame" maxlength="10"placeholder="Data da realização" required>
 				</div>
                   </div>
             </form>
@@ -254,23 +254,23 @@
                 <form>
                     <div class="form-row">
                         <div class="col-md-2 mb-2">
-                            <label>OD</label>  
+                            <label>Orelha Direita</label>  
                         </div>
                         
                       <div class="col-md-2 mb-2">
-                        <label for="presente">500</label>
+                        <label for="presente">500 Hertz (Hz)</label>
                         <input type="Name" class="form-control" id="presente" required>
                       </div>
                       <div class="col-md-2 mb-2">
-                        <label for="presente">1000</label>
+                        <label for="presente">1000 Hertz (Hz)</label>
                         <input type="Name" class="form-control" id="presente" required>
                       </div>
                       <div class="col-md-2 mb-2">
-                        <label for="presente">2000</label>
+                        <label for="presente">2000 Hertz (Hz)</label>
                         <input type="Name" class="form-control" id="presente" required>
                       </div>
                       <div class="col-md-2 mb-2">
-                        <label for="presente">4000</label>
+                        <label for="presente">4000 Hertz (Hz)</label>
                         <input type="Name" class="form-control" id="presente" required>
                       </div>
                     </div>
@@ -350,23 +350,23 @@
                 <form>
                     <div class="form-row">
                         <div class="col-md-2 mb-2">
-                            <label>OE</label>  
+                            <label>Orelha Esquerda</label>  
                         </div>
                         
                       <div class="col-md-2 mb-2">
-                        <label for="presente">500</label>
+                        <label for="presente">500 Hertz (Hz)</label>
                         <input type="Name" class="form-control" id="presente" required>
                       </div>
                       <div class="col-md-2 mb-2">
-                        <label for="presente">1000</label>
+                        <label for="presente">1000 Hertz (Hz)</label>
                         <input type="Name" class="form-control" id="presente" required>
                       </div>
                       <div class="col-md-2 mb-2">
-                        <label for="presente">2000</label>
+                        <label for="presente">2000 Hertz (Hz)</label>
                         <input type="Name" class="form-control" id="presente" required>
                       </div>
                       <div class="col-md-2 mb-2">
-                        <label for="presente">4000</label>
+                        <label for="presente">4000 Hertz (Hz)</label>
                         <input type="Name" class="form-control" id="presente" required>
                       </div>
                     </div>
@@ -415,7 +415,7 @@
                      
                     </div>
                     <div class="form-row">
-                        <div class="col-md-2 mb-2"><label>Limiares estimados de audibilidade                        </label></div>
+                        <div class="col-md-2 mb-2"><label>Limiares estimados de audibilidade </label></div>
                         
                       
                       <div class="col-md-2 mb-2">
@@ -446,8 +446,33 @@
                 <div class="col-md-6">
                     <legend><h6>Observações:</h6></legend>
                     <textarea cols="50"></textarea>
-					<legend><h6>Conduta:</h6></legend>
-                    <textarea cols="50"></textarea>
+					<div class="form-group">
+						<label><h6>Conduta:</h6></label>
+						  <div class="form-check">
+							<input class="form-check-input" type="checkbox" id="Checkbox1" value="Presenca de onda OE">
+							<label class="form-check-label" for="inlineCheckbox1">Alta</label>
+						  </div>
+						  <div class="form-check">
+							<input class="form-check-input" type="checkbox" id="Checkbox2" value="Ausencia de onda OE">
+							<label class="form-check-label" for="inlineCheckbox2">Avaliação Comportamental</label>
+						  </div>
+						  <div class="form-check">
+							<input class="form-check-input" type="checkbox" id="Checkbox3" value="Presenca Microfonismo OE">
+							<label class="form-check-label" for="inlineCheckbox3">Encaminhamento para otorrinolaringologista</label>
+						  </div>
+						  <div class="form-check">
+							<input class="form-check-input" type="checkbox" id="Checkbox3" value="Ausencia Microfonismo OE">
+							<label class="form-check-label" for="inlineCheckbox3">Reavaliação de Potencial Evocado Auditivo de Tronco Encefálico – Integridade</label>
+						  </div>
+						  <div class="form-check">
+							<input class="form-check-input" type="checkbox" id="Checkbox3" value="Integridade da via auditiva dentro OE">
+							<label class="form-check-label" for="inlineCheckbox3">Monitoramento</label>
+						  </div>
+						  <div class="form-check">
+							<input class="form-check-input" type="checkbox" id="Checkbox3" value="Integridade da via auditiva fora OE">
+							<label class="form-check-label" for="inlineCheckbox3">Outros</label>
+						  </div>
+					</div>
                 </div>
             </form>
          </div>
@@ -463,6 +488,19 @@
 		<script src="{% static 'src/plugins/datatables/js/dataTables.responsive.min.js' %}"></script>
 		<script src="{% static 'src/plugins/datatables/js/responsive.bootstrap4.min.js' %}"></script>
 		<script src="{% static 'vendors/scripts/dashboard.js' %}"></script>
+		<script >
+			const data = document.getElementById('dataexame') // Seletor do campo de telefone
+		
+			data.addEventListener('keypress', (e) => mascara(e.target.value)) // Dispara quando digitado no campo
+			data.addEventListener('change', (e) => mascara(e.target.value)) // Dispara quando autocompletado o campo
+			
+			const mascara = (valor) => {
+				valor = valor.replace(/\D/g, "")
+				valor = valor.replace(/(\d{2})(\d)/,"$1/$2")
+				valor = valor.replace(/(\d{2})(\d)/, "$1/$2")
+				data.value = valor // Insere o(s) valor(es) no campo
+		}
+		  </script>
 </body>
 </html>
 
