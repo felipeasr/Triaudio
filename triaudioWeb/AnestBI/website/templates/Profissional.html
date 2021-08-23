@@ -10,7 +10,7 @@
      <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/Tri-Audio-logo.png' %}">
      <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/Tri-Audio-logo.png' %}">
      <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/Tri-Audio-logo.png' %}">   
-     
+    
     <link rel="stylesheet" href="{% static 'style/main.css' %}">
     <link rel="stylesheet" href="{% static 'style/partials/header.css' %}">
     <link rel="stylesheet" href="{% static 'style/partials/forms.css' %}">
@@ -87,7 +87,7 @@
                 <div class="form-group col-md-4">
                     <label for="inputRegistro">Registro do Conselho</label>
                     <select id="inputRegistro" class="form-control" required>
-                      <option selected>Escolher...</option>
+                      <option>Escolher...</option>
                       <option value="CRM">CRM</option>
                       <option value="CRFa">CRFa</option>
                       <option value="CREFITO">CREFITO</option>
@@ -113,11 +113,12 @@
             <div class="input-block">
                 <div>
                     <label for="Senha">Senha</label>
-                    <input name="Senha" id="Senha" type="password" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\W+)(?=^.{8,32}$).*$" required>
-                
+                    <input name="Senha" id="Senha" type="password" maxlength="32" minlength="8" size="32" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\W+)(?=^.{8,32}$).*$" required>
                 </div>
                 <label for="Senha">Confirme a senha</label>
                 <input name="Senha_confime" id="Senha_confime" type="password" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\W+)(?=^.{8,32}$).*$" required>
+                
+                
                 <ul>A senha deverá ter no mínimo 8 caracteres e contar com, no mínimo, um(a):</ul>
                 <ol>- Letra Maiúscula;</ol>
                 <ol>- Letra Minúscula;</ol> 
@@ -207,6 +208,7 @@
         password.onchange = validatePassword;
         confirm_password.onkeyup = validatePassword;
     </script>
+   
 
 </body>
 </html>
