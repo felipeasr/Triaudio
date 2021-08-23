@@ -137,9 +137,9 @@
 
 	<div class="left-side-bar">
 		<div class="brand-logo">
-			<a href="index.html">
-				<img src="images/Tri-Audio-logo.png" alt="Logo" class="dark-logo">
-				<img src="images/Tri-Audio-logo.png" alt="Logo" class="light-logo">
+			<a href="{%url 'dash' %}">
+				<img src="{% static 'images/Tri-Audio-logo.png' %}" class="dark-logo">
+				<img src="{% static 'images/logo2.svg' %}" class="light-logo">
 			</a>
 			<div class="close-sidebar" data-toggle="left-sidebar-close">
 				<i class="ion-close-round"></i>
@@ -153,17 +153,17 @@
 							<span class=""></span><span class="mtext">Gerenciamento </span>
 						</a>
 						<ul class="submenu">
-							<li><a href="dash.html">Dashboard</a></li>
-							<li><a href="Agenda.html">Agenda</a></li>
+							<li><a href="{%url 'dash' %}">Dashboard</a></li>
+							<li><a href="{%url 'agenda' %}">Agenda</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
-						<span class="mtext">Pacientes</span>
+							<span class=""></span><span class="mtext">Pacientes</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="form-basic.html">Cadastro Geral</a></li>
-							<li><a href="novopaciente.html">Novo Paciente</a></li>
+							<li><a href="{%url 'cadastrogeral' %}">Cadastro Geral</a></li>
+							<li><a href="{%url 'novopaciente' %}">Novo Paciente</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
@@ -171,8 +171,8 @@
 							<span class=""></span><span class="mtext">TANU</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="teste.html">Teste</a></li>
-							<li><a href="reteste.html">Reteste</a></li>
+							<li><a href="{%url 'teste' %}">Teste</a></li>
+							<li><a href="{%url 'reteste' %}">Reteste</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
@@ -180,16 +180,16 @@
 							<span class=""></span><span class="mtext"> Exames </span>
 						</a>
 						<ul class="submenu">
-							<li><a href="medidasacusticas.html">Medidas de imitância Acustica</a></li>
-							<li><a href="PEATEintegridade.html">PEATE integridade</a></li>
-							<li><a href="Peatefrequenciaespecifica.html">PEATE frequêcia Específica</a></li>
-							<li><a href="EmissoesOtoacusticas.html">Emissões Otoacústicas</a></li>
-							<li><a href="Audiometria.html">Audiometria de observação Comportamental</a></li>
+							<li><a href="{%url 'medidasacusticas' %}">Medidas de imitância Acustica</a></li>
+							<li><a href="{%url 'Peate' %}">PEATE integridade</a></li>
+							<li><a href="{%url 'Peatefrequencia' %}">PEATE frequêcia Específica</a></li>
+							<li><a href="{%url 'EmissoesOtoacusticas'%}">Emissões Otoacústicas</a></li>
+							<li><a href="{%url 'Audiometria' %}">Audiometria de observação Comportamental</a></li>
 							<li><a href="ui-tooltip-popover.html">Audiometria de Reforço visual</a></li>
-							<li><a href="Audiometriacondicionada.html">Audiometria condicionada</a></li>
-							<li><a href="ui-notification.html">Diagnosticos/Avaliações ORL</a></li>
-							<li><a href="ui-timeline.html">Diagnosticos/Avaliações Médicas</a></li>
-							<li><a href="ui-progressbar.html">conclusões</a></li>
+							<li><a href="{%url 'audiometriacondicionada' %}">Audiometria condicionada</a></li>
+							<li><a href="{%url 'avaliacoesORL' %}">Diagnosticos/Avaliações ORL</a></li>
+							<li><a href="{%url 'avaliacoesmedicas' %}">Diagnosticos/Avaliações Médicas</a></li>
+							<li><a href="{%url 'conclusao' %}">conclusões</a></li>
 						</ul>
 					</li>
 					

@@ -5,11 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Triaudio|Sua Platafroma de Triagem Neonatal  </title>
+
+ 	<!-- Site favicon -->
+     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/Tri-Audio-logo.png' %}">
+     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/Tri-Audio-logo.png' %}">
+     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/Tri-Audio-logo.png' %}">   
      
-<link rel="stylesheet" href="{% static 'style/main.css' %}">
-<link rel="stylesheet" href="{% static 'style/partials/header.css' %}">
-<link rel="stylesheet" href="{% static 'style/partials/forms.css' %}">
-<link rel="stylesheet" href="{% static 'style/partials/page-profissional.css' %}">
+    <link rel="stylesheet" href="{% static 'style/main.css' %}">
+    <link rel="stylesheet" href="{% static 'style/partials/header.css' %}">
+    <link rel="stylesheet" href="{% static 'style/partials/forms.css' %}">
+    <link rel="stylesheet" href="{% static 'style/partials/page-profissional.css' %}">
 
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
 </head> 
@@ -17,7 +22,7 @@
      <div id="container">
       <header class="page-header">
         <div class="top-bar-container"> 
-            <a href="/">
+            <a href="{% url 'login' %}">
              <img src="{% static 'images/back.svg' %}" alt="voltar">
             </a>
         </div>
@@ -47,68 +52,54 @@
                 
                 <div  class="input-block">
                     <label for="cpf">CPF<small>(Somente Números)</small> </label>
-                    <input type="number" name="cpf" id="cpf" required>
+                    <input type="text" name="cpf" id="cpf" maxlength="14" required>
+                    
                 </div>
 
-                <div class="card">
-                  <label for="sexo">sexo
-                  </label>
-                    
-                    <ul>
-                        <li>
-                            <input type="radio" name="name" id="one" checked />
-                            <label for="one">Feminino</label>
-                            
-                            <div class="check"></div>
-                        </li>
-                        
-                        <li>
-                            <input type="radio" name="name" id="two" />
-                            <label for="two">Masculino</label>
-                            
-                            <div class="check"></div>
-                        </li>
-                    </ul>
-                </div>
+                
                 <div class="input-block">
                     <label for="Telefone">Telefone<small>(Somente Números)</small> </label>
-                    <input name="telefone" id="telefone" type="number" required>
+                    <input name="telefone" id="tel" maxlength="15" type="text" required>
     
                 </div>
                 <div class="input-block">
                     <label for="Telefone">Telefone 2<small>(Somente Números)</small> </label>
-                    <input name="telefone" id="telefone" type="number" required>
+                    <input name="telefone" id="phone" maxlength="15" type="text" required>
     
                 </div>
 
-                <div  class="input-block">
-                    <label for="nas">Data de Nascimento<small>(Somente Números)</small> </label>
-                    <input type="number" name="nas" id="nas" required>
-                </div>
-                
+        
              </fieldset>
              <fieldset>
                 <legend>Dados Institucional</legend>  
                 <div class = "input-block">
-                 <label for="CNES">CNES</label>
-                 <input name="CNES" id="CNES" type="number" required>
-             </div>
-             <div class="input-block">
-                 <label for="Senha">CNPJ</label>
-                 <input name="CNPJ" id="CNPJ" type="number" required>
- 
+                 <label for="CNES">CNES OU CNPJ</label>
+                 <input name="CNES" id="DadoIntitucional" type="number" required>
              </div>
 
               </fieldset>
               <fieldset>
                 <legend>Dados Profissionais</legend>  
                 <div  class="input-block">
-                    <label for="Especialidade">Especialidade <small> Fonoaudiólogo(a) ou Médico(a)</small></label>
+                    <label for="Especialidade">Especialidade <small>(Fonoaudiólogo(a) ou Médico(a))</small></label>
                     <input name="Especialidade" id="Especialidade" required>
                 </div>
-                <div class="input-block">
-                    <label for="Senha">CRM ou CFR</label>
-                    <input name="CRM" id="CRM" type="number" required>
+                <div class="form-group col-md-4">
+                    <label for="inputRegistro">Registro do Conselho</label>
+                    <select id="inputRegistro" class="form-control" required>
+                      <option selected>Escolher...</option>
+                      <option value="CRM">CRM</option>
+                      <option value="CRFa">CRFa</option>
+                      <option value="CREFITO">CREFITO</option>
+                      <option value="COREN">COREN</option>
+                      <option value="CRP">CRP</option>
+                      <option value="CRAS">CRAS</option>
+                      <option value="CRO">CRO</option>
+                      <option value="Outros">Outros</option>
+                    </select>
+                <div class="input-block">                    
+                    <input name="Registro" id="Registro" type="number" value="" required>
+                </div>
     
              
               </fieldset>
@@ -120,27 +111,102 @@
                 <input name="email" id="email" type="email" required>
             </div>
             <div class="input-block">
-                <label for="Senha">Senha</label>
-                <input name="Senha" id="Senha" type="password" required>
+                <div>
+                    <label for="Senha">Senha</label>
+                    <input name="Senha" id="Senha" type="password" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\W+)(?=^.{8,32}$).*$" required>
+                
+                </div>
+                <label for="Senha">Confirme a senha</label>
+                <input name="Senha_confime" id="Senha_confime" type="password" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\W+)(?=^.{8,32}$).*$" required>
+                <ul>A senha deverá ter no mínimo 8 caracteres e contar com, no mínimo, um(a):</ul>
+                <ol>- Letra Maiúscula;</ol>
+                <ol>- Letra Minúscula;</ol> 
+                <ol>- Numeral;</ol>
+                <ol>- Caracter Especial (#@$)</ol>
+                <ol>- Máximo 32 Caracteres</ol>
+
+
 
             </div>
-            
-            
+            <br>
+            <div class=" main footer button">
+                <button type="submit" onclick="validatePassword()"> Salva Cadastro</button>
+            </div>
+            <footer>
+                <p>
+                   <img src="{% static 'images/warning.svg' %}" alt="Aviso">
+                   Importante! <br> Preencha todos os campos 
+                </p>
+                <p>
+                    <img src="{% static 'images/Tri-Audio-logo.png' %}" width="250" height="150" alt="Aviso">
+                </p>
+               
+            </footer>
 
              </fieldset>
+             
          </form>
-         <footer>
-             <p>
-                <img src="{% static 'images/warning.svg' %}" alt="Aviso">
-                Importante! <br> Preencha todos os campos 
-             </p>
-             <button type="submit" form="create-class"> Salva Cadastro  </button>
-         </footer>
+        
        
          
      </main>
     </div>
+    <script>
+        const cpf = document.getElementById('cpf') // Seletor do campo de CPF
+            
+        cpf.addEventListener('keypress', (e) => cpfmascara(e.target.value)) // Dispara quando digitado no campo
+        cpf.addEventListener('change', (e) => cpfmascara(e.target.value)) 
+        const cpfmascara = (valor)=>{
+          valor=valor.replace(/\D/g,"")
+          valor=valor.replace(/(\d{3})(\d)/,"$1.$2")
+          valor=valor.replace(/(\d{3})(\d)/,"$1.$2")
+          valor=valor.replace(/(\d{3})(\d{1,2})$/,"$1-$2")
+          cpf.value = valor
+    }		
+      </script>
+     <script >
+        const tel = document.getElementById('tel') // Seletor do campo de telefone
     
+    tel.addEventListener('keypress', (e) => mascaraTelefone(e.target.value)) // Dispara quando digitado no campo
+    tel.addEventListener('change', (e) => mascaraTelefone(e.target.value)) // Dispara quando autocompletado o campo
+    
+    const mascaraTelefone = (valor) => {
+        valor = valor.replace(/\D/g, "")
+        valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2")
+        valor = valor.replace(/(\d)(\d{4})$/, "$1-$2")
+        tel.value = valor // Insere o(s) valor(es) no campo
+    }
+    
+    
+      </script>
+      <script >
+        const telefone = document.getElementById('phone') // Seletor do campo de telefone
+    
+    telefone.addEventListener('keypress', (e) => mascara(e.target.value)) // Dispara quando digitado no campo
+    telefone.addEventListener('change', (e) => mascara(e.target.value)) // Dispara quando autocompletado o campo
+    
+    const mascara = (valor) => {
+        valor = valor.replace(/\D/g, "")
+        valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2")
+        valor = valor.replace(/(\d)(\d{4})$/, "$1-$2")
+        telefone.value = valor // Insere o(s) valor(es) no campo
+    }
+      </script>
+    <script>
+        var password = document.getElementById("Senha")
+        , confirm_password = document.getElementById("Senha_confime");
+
+        function validatePassword(){
+        if(password.value != confirm_password.value) {
+            confirm_password.setCustomValidity("Senhas diferentes!");
+        } else {
+            confirm_password.setCustomValidity('');
+        }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+    </script>
 
 </body>
 </html>

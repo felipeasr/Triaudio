@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,9 +7,10 @@
 	<title>Triaudio</title>
 
 	<!-- Site favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="images/Tri-Audio-logo.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="images/Tri-Audio-logo.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="images/Tri-Audio-logo.png">
+	<!-- Site favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/Tri-Audio-logo.png' %}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/Tri-Audio-logo.png' %}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/Tri-Audio-logo.png' %}">
 
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,11 +18,12 @@
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="vendors/styles/core.css">
-	<link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css">
-	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/dataTables.bootstrap4.min.css">
-	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/responsive.bootstrap4.min.css">
-	<link rel="stylesheet" type="text/css" href="vendors/styles/style.css">
+	
+	<link rel="stylesheet" type="text/css" href="{% static 'vendors/styles/core.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'vendors/styles/icon-font.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'src/plugins/datatables/css/dataTables.bootstrap4.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'src/plugins/datatables/css/responsive.bootstrap4.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'vendors/styles/style.css' %}">
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
@@ -134,9 +137,9 @@
 
 	<div class="left-side-bar">
 		<div class="brand-logo">
-			<a href="index.html">
-				<img src="images/Tri-Audio-logo.png"" class="dark-logo">
-				<img src="images/Tri-Audio-logo.png" alt="" class="light-logo">
+			<a href="{%url 'dash' %}">
+				<img src="{% static 'images/Tri-Audio-logo.png' %}" class="dark-logo">
+				<img src="{% static 'images/logo2.svg' %}" class="light-logo">
 			</a>
 			<div class="close-sidebar" data-toggle="left-sidebar-close">
 				<i class="ion-close-round"></i>
@@ -150,17 +153,17 @@
 							<span class=""></span><span class="mtext">Gerenciamento </span>
 						</a>
 						<ul class="submenu">
-							<li><a href="dash.html">Dashboard</a></li>
-							<li><a href="Agenda.html">Agenda</a></li>
+							<li><a href="{%url 'dash' %}">Dashboard</a></li>
+							<li><a href="{%url 'agenda' %}">Agenda</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
-						<span class="mtext">Pacientes</span>
+							<span class=""></span><span class="mtext">Pacientes</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="form-basic.html">Cadastro Geral</a></li>
-							<li><a href="novopaciente.html">Novo Paciente</a></li>
+							<li><a href="{%url 'cadastrogeral' %}">Cadastro Geral</a></li>
+							<li><a href="{%url 'novopaciente' %}">Novo Paciente</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
@@ -168,8 +171,8 @@
 							<span class=""></span><span class="mtext">TANU</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="teste.html">Teste</a></li>
-							<li><a href="reteste.html">Reteste</a></li>
+							<li><a href="{%url 'teste' %}">Teste</a></li>
+							<li><a href="{%url 'reteste' %}">Reteste</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
@@ -177,16 +180,16 @@
 							<span class=""></span><span class="mtext"> Exames </span>
 						</a>
 						<ul class="submenu">
-							<li><a href="medidasacusticas.html">Medidas de imitância Acustica</a></li>
-							<li><a href="PEATEintegridade.html">PEATE integridade</a></li>
-							<li><a href="Peatefrequenciaespecifica.html">PEATE frequêcia Específica</a></li>
-							<li><a href="EmissoesOtoacusticas.html">Emissões Otoacústicas</a></li>
-							<li><a href="Audiometria.html">Audiometria de observação Comportamental</a></li>
+							<li><a href="{%url 'medidasacusticas' %}">Medidas de imitância Acustica</a></li>
+							<li><a href="{%url 'Peate' %}">PEATE integridade</a></li>
+							<li><a href="{%url 'Peatefrequencia' %}">PEATE frequêcia Específica</a></li>
+							<li><a href="{%url 'EmissoesOtoacusticas'%}">Emissões Otoacústicas</a></li>
+							<li><a href="{%url 'Audiometria' %}">Audiometria de observação Comportamental</a></li>
 							<li><a href="ui-tooltip-popover.html">Audiometria de Reforço visual</a></li>
-							<li><a href="Audiometriacondicionada.html">Audiometria condicionada</a></li>
-							<li><a href="AvaliacoesORL.html">Diagnosticos/Avaliações ORL</a></li>
-							<li><a href="Avaliacoesmedicas.html">Diagnosticos/Avaliações Médicas</a></li>
-							<li><a href="conclusoes.html">conclusões</a></li>
+							<li><a href="{%url 'audiometriacondicionada' %}">Audiometria condicionada</a></li>
+							<li><a href="{%url 'avaliacoesORL' %}">Diagnosticos/Avaliações ORL</a></li>
+							<li><a href="{%url 'avaliacoesmedicas' %}">Diagnosticos/Avaliações Médicas</a></li>
+							<li><a href="{%url 'conclusao' %}">conclusões</a></li>
 						</ul>
 					</li>
 					
@@ -301,16 +304,16 @@
         
 	</div>
 	<!-- js -->
-	<script src="vendors/scripts/core.js"></script>
-	<script src="vendors/scripts/script.min.js"></script>
-	<script src="vendors/scripts/process.js"></script>
-	<script src="vendors/scripts/layout-settings.js"></script>
-	<script src="src/plugins/apexcharts/apexcharts.min.js"></script>
-	<script src="src/plugins/datatables/js/jquery.dataTables.min.js"></script>
-	<script src="src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
-	<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
-	<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
-	<script src="vendors/scripts/dashboard.js"></script>
+	<script src="{% static 'vendors/scripts/core.js' %}"></script>
+	<script src="{% static 'vendors/scripts/script.min.js' %}"></script>
+	<script src="{% static 'vendors/scripts/process.js' %}"></script>
+	<script src="{% static 'vendors/scripts/layout-settings.js' %}"></script>
+	<script src="{% static 'src/plugins/apexcharts/apexcharts.min.js' %}"></script>
+	<script src="{% static 'src/plugins/datatables/js/jquery.dataTables.min.js' %}"></script>
+	<script src="{% static 'src/plugins/datatables/js/dataTables.bootstrap4.min.js' %}"></script>
+	<script src="{% static 'src/plugins/datatables/js/dataTables.responsive.min.js' %}"></script>
+	<script src="{% static 'src/plugins/datatables/js/responsive.bootstrap4.min.js' %}"></script>
+	<script src="{% static 'vendors/scripts/dashboard.js' %}"></script>
 </body>
 </html>
 

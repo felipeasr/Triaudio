@@ -40,10 +40,6 @@ def reteste(request):
 def medidasacusticas(request):
     return render(request, 'medidasacusticas.html',{})
 def novopaciente(request):
-    if request.method == "POST":
-        aub = request.POST.get('Parto',0)
-        return render(request, 'novopaciente.html', {'aub':aub })
-    else:
         return render(request, 'novopaciente.html', {})
 
 def cadastrogeral(request):

@@ -137,7 +137,7 @@
 
 	<div class="left-side-bar">
 		<div class="brand-logo">
-			<a href="index.html">
+			<a href="{%url 'dash' %}">
 				<img src="{% static 'images/Tri-Audio-logo.png' %}" class="dark-logo">
 				<img src="{% static 'images/logo2.svg' %}" class="light-logo">
 			</a>
@@ -153,17 +153,17 @@
 							<span class=""></span><span class="mtext">Gerenciamento </span>
 						</a>
 						<ul class="submenu">
-							<li><a href="dash.html">Dashboard</a></li>
-							<li><a href="Agenda.html">Agenda</a></li>
+							<li><a href="{%url 'dash' %}">Dashboard</a></li>
+							<li><a href="{%url 'agenda' %}">Agenda</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
-						<span class="mtext">Pacientes</span>
+							<span class=""></span><span class="mtext">Pacientes</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="form-basic.html">Cadastro Geral</a></li>
-							<li><a href="novopaciente.html">Novo Paciente</a></li>
+							<li><a href="{%url 'cadastrogeral' %}">Cadastro Geral</a></li>
+							<li><a href="{%url 'novopaciente' %}">Novo Paciente</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
@@ -181,15 +181,15 @@
 						</a>
 						<ul class="submenu">
 							<li><a href="{%url 'medidasacusticas' %}">Medidas de imitância Acustica</a></li>
-							<li><a href="PEATEintegridade.html">PEATE integridade</a></li>
-							<li><a href="Peatefrequenciaespecifica.html">PEATE frequêcia Específica</a></li>
-							<li><a href="EmissoesOtoacusticas.html">Emissões Otoacústicas</a></li>
-							<li><a href="Audiometria.html">Audiometria de observação Comportamental</a></li>
-							<li><a href="uer.html">Audiometria de Reforço visual</a></li>
-							<li><a href="Audiometriacondicionada.html">Audiometria condicionada</a></li>
-							<li><a href="AvaliacoesORL.html">Diagnosticos/Avaliações ORL</a></li>
-							<li><a href=".html">Diagnosticos/Avaliações Médicas</a></li>
-							<li><a href="conclusoes.html">conclusões</a></li>
+							<li><a href="{%url 'Peate' %}">PEATE integridade</a></li>
+							<li><a href="{%url 'Peatefrequencia' %}">PEATE frequêcia Específica</a></li>
+							<li><a href="{%url 'EmissoesOtoacusticas'%}">Emissões Otoacústicas</a></li>
+							<li><a href="{%url 'Audiometria' %}">Audiometria de observação Comportamental</a></li>
+							<li><a href="ui-tooltip-popover.html">Audiometria de Reforço visual</a></li>
+							<li><a href="{%url 'audiometriacondicionada' %}">Audiometria condicionada</a></li>
+							<li><a href="{%url 'avaliacoesORL' %}">Diagnosticos/Avaliações ORL</a></li>
+							<li><a href="{%url 'avaliacoesmedicas' %}">Diagnosticos/Avaliações Médicas</a></li>
+							<li><a href="{%url 'conclusao' %}">conclusões</a></li>
 						</ul>
 					</li>
 					
@@ -235,35 +235,35 @@
         
         <div class="mb-3">
           <label for="formGroupExampleInput" class="form-label"><h6>Nome:</h6></label>
-          <input type="name" class="form-control" name="nomeNeonato" placeholder="Nome do Neonato" required value="teste">
+          <input type="name" class="form-control" name="nomeNeonato" placeholder="Nome do Neonato" required value="">
         </div>
         <div class="mb-3">
           <label for="formGroupExampleInput" class="form-label"><h6>Sobrenome:</h6></label>
-          <input type="name" class="form-control" id="sobreNeonato" placeholder="Sobrenome do Neonato">
+          <input type="name" class="form-control" id="sobreNeonato" placeholder="Sobrenome do Neonato" required value="">
         </div>
         
         <label for="sexo"><h6>Tipo Parto:</h6></label>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="Parto" id="exampleRadios1" value="option1">
+          <input class="form-check-input" type="radio" name="Parto" id="exampleRadios1" value="Normal">
           <label class="form-check-label" for="exampleRadios1">
           Normal
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="Parto" id="exampleRadios2" value="option2">
+          <input class="form-check-input" type="radio" name="Parto" id="exampleRadios2" value="Cesárea">
           <label class="form-check-label" for="exampleRadios2">
           Cesárea
           </label>
         </div>
         <label for="sexo"><h6>Sexo:</h6></label>
         <div class="form-check">
-        <input class="form-check-input" type="radio" name="sexo" id="exampleRadios1" value="option3">
+        <input class="form-check-input" type="radio" name="sexo" id="exampleRadios1" value="Masculino">
         <label class="form-check-label" for="Radios1">
           Masculino
         </label>
         </div>
         <div class="form-check">
-        <input class="form-check-input" type="radio" name="sexo" id="exampleRadios2" value="option4">
+        <input class="form-check-input" type="radio" name="sexo" id="exampleRadios2" value="Feminino">
         <label class="form-check-label" for="Radios2">
           Feminino
         </label>
@@ -332,61 +332,61 @@
         
         <label for="sexo"><h6> APGAR 1º minuto</h6></label>
         <div class="form-check">
-        <input class="form-check-input" type="radio" name="apgar5" id="exampleRadios1" value="option3" >
+        <input class="form-check-input" type="radio" name="1APGAR" id="exampleRadios1" value="1APGAR" >
         <label class="form-check-label" for="Radios1">
         1 APGAR
         </label>
         </div>
         <div class="form-check">
-        <input class="form-check-input" type="radio" name="apgar5" id="exampleRadios2" value="option4">
+        <input class="form-check-input" type="radio" name="2APGAR" id="exampleRadios2" value="2APGAR">
         <label class="form-check-label" for="Radios2">
         2 APGAR
         </label>
         </div>
         <div class="form-check">
-        <input class="form-check-input" type="radio" name="apgar5" id="exampleRadios2" value="option4">
+        <input class="form-check-input" type="radio" name="3APGAR" id="exampleRadios2" value="3APGAR">
         <label class="form-check-label" for="Radios2">
         3 APGAR
         </label>
         </div>
         <div class="form-check">
-        <input class="form-check-input" type="radio" name="apgar5" id="exampleRadios2" value="option4">
+        <input class="form-check-input" type="radio" name="4APGAR" id="exampleRadios2" value="4APGAR">
         <label class="form-check-label" for="Radios2">
         4 APGAR
         </label>
         </div>
         <div class="form-check">
-        <input class="form-check-input" type="radio" name="apgar5" id="exampleRadios2" value="option4">
+        <input class="form-check-input" type="radio" name="5APGAR" id="exampleRadios2" value="5APGAR">
         <label class="form-check-label" for="Radios2">
         5 APGAR
         </label>
         </div>
         <div class="form-check">
-        <input class="form-check-input" type="radio" name="apgar5" id="exampleRadios2" value="option4">
+        <input class="form-check-input" type="radio" name="6APGAR" id="exampleRadios2" value="6APGAR">
         <label class="form-check-label" for="Radios2">
         6 APGAR
         </label>
         </div>
         <div class="form-check">
-        <input class="form-check-input" type="radio" name="apgar5" id="exampleRadios2" value="option4">
+        <input class="form-check-input" type="radio" name="7APGAR" id="exampleRadios2" value="7APGAR">
         <label class="form-check-label" for="Radios2">
         7 APGAR
         </label>
         </div>
         <div class="form-check">
-        <input class="form-check-input" type="radio" name="apgar5" id="exampleRadios2" value="option4">
+        <input class="form-check-input" type="radio" name="8APGAR" id="exampleRadios2" value="8APGAR">
         <label class="form-check-label" for="Radios2">
         8 APGAR
         </label>
         </div>
         <div class="form-check">
-        <input class="form-check-input" type="radio" name="apgar5" id="exampleRadios2" value="option4">
+        <input class="form-check-input" type="radio" name="9APGAR" id="exampleRadios2" value="9APGAR">
         <label class="form-check-label" for="Radios2">
         9 APGAR
         </label>
         </div>
         <div class="form-check">
-        <input class="form-check-input" type="radio" name="apgar5" id="exampleRadios2" value="option4">
+        <input class="form-check-input" type="radio" name="10APGAR" id="exampleRadios2" value="10APGAR">
         <label class="form-check-label" for="Radios2">
         10 APGAR
         </label>
@@ -411,9 +411,9 @@
               <label>Se sim, selecione:</label>
               <select class="custom-select2 form-control" name="state" style="width: 100%; height: 38px;">
                   <optgroup>
-                      <option value="HI"></option>
-                      <option value="AK">História familiar de perda auditiva</option>
-                      <option value="HI">Terapia Intensiva Neonatal (mais de 5 dias)</option>
+                      <option value="text em branco"></option>
+                      <option value="História familiar de perda auditiva">História familiar de perda auditiva</option>
+                      <option value="Terapia Intensiva Neonatal (mais de 5 dias)">Terapia Intensiva Neonatal (mais de 5 dias)</option>
                       <option value="HI">Hiperbilirrubinemia com exsanguineotransfusão, independentemente do tempo de internação</option>
                       <option value="HI">Asfixia ou Encefalopatia Isquêmica Hipóxica </option>
                       <option value="HI">Oxigenação por membrana extracorpórea</option>
@@ -445,100 +445,102 @@
           </div>
       </div>
       
-        <div class="mb-3">
-        <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="obito" aria-label="Óbito">
-        <label label class="form-check-label" for="obito"><h6>Óbito</h6></label>
-        </div> 
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Óbito" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+           <h6>Óbito</h6> 
+          </label>
+        </div>
 
         <legend><h6>Observações:</h6></legend>
 					<textarea cols="100"></textarea>
+          <div class="pd-20 card-box mb-30">
+  
+            <legend>
+              Dados Responsável:
+              </legend>
+              <div class="mb-3">
+              <label for="formGroupExampleInput" class="form-label">Nome completo do responsável:</label>
+              <input type="nameResponsavel" class="form-control" id="nomeResponsavel" placeholder="Nome do Responsável" value="">
+              </div>
+              <div class="mb-3">
+              <label for="formGroupExampleInput" class="form-label">CPF do Responsável:</label>
+              <input type="text" class="form-control" id="cpf" name=""cpf  maxlength="14" placeholder="CPF" value="" required >
+              </div>
+              <div class="mb-3">
+              <label for="formGroupExampleInput" class="form-label">E-mail:</label>
+              <input type="email" class="form-control" id="email" placeholder="E-mail" value="">
+              </div>
+              <div class="mb-3">
+              <label for="formGroupExampleInput" class="form-label">Celular 1:</label>
+              <input type="text" class="form-control" id="phone" name="phone" maxlength="15"placeholder="Telefone" value="" required>
+              </div>
+              <div class="mb-3">
+              <label for="formGroupExampleInput" class="form-label">Celular 2:</label>
+              <input type="text" class="form-control" id="tel" name="tel" maxlength="15" placeholder="Telefone" value="" required>
+              </div>
+            </div>
+            <div class="pd-20 card-box mb-30" >
+              <form action="{% url 'novopaciente' %}" mathod ="post">
+                {% csrf_token %}
+                <legend>
+                  Dados de Endereço:
+                  </legend>
+                  <div class="row">
+                    <div class="col-md-4 col-sm-12">
+                      <div class="form-group">
+                        <label>CEP:</label>
+                        <input type="number" id="cep" class="form-control" maxlength="8" value="">
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                      <div class="form-group">
+                        <label>Endereço:</label>
+                        <input type="text" id="logradouro" class="form-control" value="">
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                      <div class="form-group">
+                        <label>Número:</label>
+                        <input type="text" id="numero" class="form-control" value="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3 col-sm-12">
+                      <div class="form-group">
+                        <label>Bairro:</label>
+                        <input type="text" id="bairro" class="form-control" value="">
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12">
+                      <div class="form-group">
+                        <label>Cidade:</label>
+                        <input type="text" id="cidade" class="form-control" value="">
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12">
+                      <div class="form-group">
+                        <label>Estado:</label>
+                        <input type="text" id="uf" class="form-control" value="">
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12">
+                      <div class="form-group">
+                        <label>Complemento:</label>
+                        <input type="text" id="complemento" class="form-control" value="">
+                      </div>
+                    </div>
+                  </div>
+                  <button  type="submit" class="btn btn-primary btn-sm">Salvar</button>
+       
+              </form>
+            </div>
    </div>
   </form>
-   <div class="pd-20 card-box mb-30">
-  <form action="">
-   <legend>
-     Dados Responsável:
-     </legend>
-     <div class="mb-3">
-     <label for="formGroupExampleInput" class="form-label">Nome completo do responsável:</label>
-     <input type="nameResponsavel" class="form-control" id="nomeResponsavel" placeholder="Nome do Responsável">
-     </div>
-     <div class="mb-3">
-     <label for="formGroupExampleInput" class="form-label">CPF do Responsável:</label>
-     <input type="text" class="form-control" id="cpf" name=""cpf  maxlength="14" placeholder="CPF" required >
-     </div>
-     <div class="mb-3">
-     <label for="formGroupExampleInput" class="form-label">E-mail:</label>
-     <input type="email" class="form-control" id="email" placeholder="E-mail">
-     </div>
-     <div class="mb-3">
-     <label for="formGroupExampleInput" class="form-label">Celular 1:</label>
-     <input type="text" class="form-control" id="phone" name="phone" maxlength="15"placeholder="Telefone" required>
-     </div>
-     <div class="mb-3">
-     <label for="formGroupExampleInput" class="form-label">Celular 2:</label>
-     <input type="text" class="form-control" id="tel" name="tel" maxlength="15" placeholder="Telefone" required>
-     </div>
-   </div>
+   
 
- </form >
-<div class="pd-20 card-box mb-30" >
-  <form action="{% url 'novopaciente' %}" mathod ="post">
-    {% csrf_token %}
-    <legend>
-      Dados de Endereço:
-      </legend>
-      <div class="row">
-        <div class="col-md-4 col-sm-12">
-          <div class="form-group">
-            <label>CEP:</label>
-            <input type="text" id="cep" class="form-control" maxlength="10">
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-12">
-          <div class="form-group">
-            <label>Endereço:</label>
-            <input type="text" class="form-control">
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-12">
-          <div class="form-group">
-            <label>Número:</label>
-            <input type="text" class="form-control">
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-3 col-sm-12">
-          <div class="form-group">
-            <label>Bairro:</label>
-            <input type="text" class="form-control">
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-12">
-          <div class="form-group">
-            <label>Cidade:</label>
-            <input type="text" class="form-control">
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-12">
-          <div class="form-group">
-            <label>Estado:</label>
-            <input type="text" class="form-control">
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-12">
-          <div class="form-group">
-            <label>Complemento:</label>
-            <input type="text" class="form-control">
-          </div>
-        </div>
-      </div>
-      <button  type="submit" class="btn btn-primary btn-sm">Salvar</button>
-      
-      
-  </form>
-</div>
+
 
 	</div>
 	<!-- js -->
@@ -594,18 +596,35 @@ const mascara = (valor) => {
       cpf.value = valor
 }		
   </script>
-  <script>
-    const cep = document.getElementById('cep') // Seletor do campo de Cep
-            
-    cep.addEventListener('keypress', (e) => cepmascara(e.target.value)) // Dispara quando digitado no campo
-    cep.addEventListener('change', (e) => cepmascara(e.target.value)) 
-    const cepmascara = (valor)=>{
-      valor=valor.replace(/\D/g,"")
-			valor=valor.replace(/^(\d{2})(\d)/,"$1.$2")
-			valor=valor.replace(/\.(\d{3})(\d)/,".$1-$2")
-      cep.value = valor
-    }
-  </script>
+  
+  <script type="text/javascript">
+		$("#cep").focusout(function(){
+			//Início do Comando AJAX
+			$.ajax({
+				//O campo URL diz o caminho de onde virá os dados
+				//É importante concatenar o valor digitado no CEP
+				url: 'https://viacep.com.br/ws/'+$(this).val()+'/json/unicode/',
+				//Aqui você deve preencher o tipo de dados que será lido,
+				//no caso, estamos lendo JSON.
+				dataType: 'json',
+				//SUCESS é referente a função que será executada caso
+				//ele consiga ler a fonte de dados com sucesso.
+				//O parâmetro dentro da função se refere ao nome da variável
+				//que você vai dar para ler esse objeto.
+				success: function(resposta){
+					//Agora basta definir os valores que você deseja preencher
+					//automaticamente nos campos acima.
+					$("#logradouro").val(resposta.logradouro);
+					$("#bairro").val(resposta.bairro);
+					$("#cidade").val(resposta.localidade);
+					$("#uf").val(resposta.uf);
+					//Vamos incluir para que o Número seja focado automaticamente
+					//melhorando a experiência do usuário
+					$("#numero").focus();
+				}
+			});
+		});
+	</script>
   
 </body>
 </html>
