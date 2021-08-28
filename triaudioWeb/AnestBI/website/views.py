@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from website.forms import testeForm
+from website.models import teste
 
 
 def Index(request):
@@ -6,6 +8,11 @@ def Index(request):
 
 def conclusao(request):
     return render(request, 'conclusoes.html', {})
+
+
+def dicas(request):
+    return render(request, 'Dicas.html', {})
+
 
 def agenda(request):
     return render(request, 'Agenda.html', {})
@@ -32,7 +39,10 @@ def PeateFrequencia(request):
     return render(request,'Peatefrequenciaespecifica.html',{})
 
 def teste(request):
-    return render(request,'teste.html',{})
+    form = testeForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+    return render(request,'teste.html',{'form':form})
 
 def reteste(request):
     return render(request,'reteste.html',{})

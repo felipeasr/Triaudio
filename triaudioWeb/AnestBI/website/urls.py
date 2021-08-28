@@ -20,5 +20,6 @@ urlpatterns = [
     path('AvaliacoesORL.html',views.avaliacoesORL,name="avaliacoesORL"),
     path('Avaliacoesmedicas.html',views.avaliacoesmedicas,name="avaliacoesmedicas"),
     path('emissoesOtoacusticas.html',views.emissoesOtoacusticas,name="EmissoesOtoacusticas"),
+    path('Dicas.html',views.dicas,name="dicas"),
 ]
 

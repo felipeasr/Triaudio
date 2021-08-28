@@ -17,6 +17,7 @@
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 	<!-- CSS -->
+	
 	<link rel="stylesheet" type="text/css" href="{% static 'vendors/styles/core.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'vendors/styles/icon-font.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'src/plugins/datatables/css/dataTables.bootstrap4.min.css' %}">
@@ -41,7 +42,7 @@
 		
 			<div class="header-search">
 				<form>
-					<h1><legend>TANU</legend></h1>
+					<h1><legend>Dicas</legend></h1>
 				</form>
 			</div>
 		</div>
@@ -221,98 +222,29 @@
 		</div>
 	</div>
 	<div class="mobile-menu-overlay"></div>
-
+	
 	<div class="main-container">
-		<div class="pd-20 card-box mb-30">
-			<form method="POST">
-				{% csrf_token %}
-				<legend>
-					Teste
-				</legend>
-				  <div class="mb-3">
-					<label for="formGroupExampleInput" class="form-label">Data do Teste:</label>
-					<input type="number" class="form-control" id="datateste" placeholder="Data de Teste" value="">
-				  </div>
-				  <label for="sexo"><h6>Tipo de Teste:</h6></label>
-				  <div class="form-check">
-				   <input class="form-check-input" type="radio" name="teste" id="exampleRadios1" value="option3" >
-				   <label class="form-check-label" for="Radios1">
-					 EOA
-				   </label>
-				 </div>
-				 <div class="form-check">
-				   <input class="form-check-input" type="radio" name="teste" id="exampleRadios2" value="option4">
-				   <label class="form-check-label" for="Radios2">
-					 PEATE-A
-				   </label>
-				</div>
-
-				<legend><h6>OD:</h6></legend>
-				<div class="form-check">
-				   <input class="form-check-input" type="radio" name="OD" id="exampleRadios1" value="option3" >
-				   <label class="form-check-label" for="Radios1">
-					 Normal
-				   </label>
-				 </div>
-				 <div class="form-check">
-				   <input class="form-check-input" type="radio" name="OD" id="exampleRadios2" value="option4">
-				   <label class="form-check-label" for="Radios2">
-					 Alterado
-				   </label>
-				 </div>
-				 <div class="form-check">
-				  <input class="form-check-input" type="radio" name="OD" id="exampleRadios2" value="option4">
-				  <label class="form-check-label" for="Radios2">
-					Impossibilidade de realização
-				  </label>
-				 </div>
-				 <legend><h6>OE:</h6></legend>
-				 <div class="form-check">
-				  <input class="form-check-input" type="radio" name="OE" id="exampleRadios1" value="option3" >
-				  <label class="form-check-label" for="Radios1">
-					Normal
-				  </label>
-				</div>
-				<div class="form-check">
-				  <input class="form-check-input" type="radio" name="OE" id="exampleRadios2" value="option4">
-				  <label class="form-check-label" for="Radios2">
-					Alterado
-				  </label>
-				</div>
-				<div class="form-check">
-				 <input class="form-check-input" type="radio" name="OE" id="exampleRadios2" value="option4">
-				 <label class="form-check-label" for="Radios2">
-					Impossibilidade de realização
-				 </label>
-				</div>
-				<legend><h6>Conduta:</h6></legend>
-				<div class="form-check">
-				 <input class="form-check-input" type="radio" name="conduta" id="exampleRadios1" value="option3" >
-				 <label class="form-check-label" for="Radios1">
-				   Alta
-				 </label>
-			   </div>
-			   <div class="form-check">
-				 <input class="form-check-input" type="radio" name="conduta" id="exampleRadios2" value="option4">
-				 <label class="form-check-label" for="Radios2">
-				   Reteste
-				 </label>
-			   </div>
-			   <div class="form-check">
-				<input class="form-check-input" type="radio" name="conduta" id="exampleRadios2" value="option4">
-				<label class="form-check-label" for="Radios2">
-				  Monitoramento
-				</label>
-			   </div>
-			   <legend><h6>Observações:</h6></legend>
-			   <textarea cols="40" value=""></textarea>
-
-			   <button type="submit"> Salvar </button>
-			</form>
-
-
-		</div>
+		
+        <table cellpadding="10" cellspacing="0" align="center" width="100%" height="100%">
+            <tr>
+            <td><iframe src="https://bvsms.saude.gov.br/bvs/publicacoes/diretrizes_atencao_triagem_auditiva_neonatal.pdf" width="1060" height="780" style="border: none;"></iframe></td>
+            </tr>
+        <table cellpadding="10" cellspacing="0" align="center" width="100%" height="100%">
+            <tr>
+            <td><iframe src="https://ldh.la.gov/assets/oph/Center-PHCH/Center-PH/cshs/EHDI/EHID_2020_JCIHPositionStatement.pdf" width="1060" height="780" style="border: none;"></iframe></td>
+            </tr>
+        <table cellpadding="10" cellspacing="0" align="center" width="100%" height="100%">
+            <tr>
+            <td><iframe src="{% static 'pdf.pdf' %}" width="1060" height="780" style="border: none;"></iframe></td>
+            </tr>
+                      
+        <table cellpadding="10" cellspacing="0" align="center" width="100%" height="100%">
+             <tr>
+             <td><iframe src="http://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12303.htm" width="1060" height="780" style="border: none;"></iframe></td>
+             </tr>
+                   
 	</div>
+	<!-- js -->
 	<!-- js -->
 	<script src="{% static 'vendors/scripts/core.js' %}"></script>
 	<script src="{% static 'vendors/scripts/script.min.js' %}"></script>
