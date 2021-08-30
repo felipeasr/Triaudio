@@ -49,6 +49,9 @@
 		<div class="header-right">
 			<div class="dashboard-setting user-notification">
 				<div class="dropdown">
+					<a href="{%url 'account_logout' %}" class="dropdown-toggle no-arrow">
+						<span class=""></span><span class="mtext">SAIR</span>
+					</a>
 					<a class="dropdown-toggle no-arrow" href="javascript:;" data-toggle="right-sidebar">
 						<i class="dw dw-settings2"></i>
 					</a>
@@ -213,7 +216,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="Index.html" class="dropdown-toggle no-arrow">
+						<a href="{%url 'account_logout' %}" class="dropdown-toggle no-arrow">
 							<span class=""></span><span class="mtext">SAIR</span>
 						</a>
 					</li>
@@ -232,7 +235,7 @@
 					</div>
 					<div class="col-md-8">
 						<h4 class="font-20 weight-500 mb-10 text-capitalize">
-							Bem-vindo!<div class="weight-600 font-30 text-blue">Johnny Brown!</div>
+							Bem-vindo!<div class="weight-600 font-30 text-blue"><a href="/account/{{form.id_login}}"></a></div>
 						</h4>
 						<p class="font-18 max-width-600">É fundamental que os Serviços de Triagem Auditiva Neonatal utilizem os índices de qualidade do serviço, verificando: controle da cobertura, índice de retestes, encaminhamentos, monitoramentos, diagnósticos, falsos positivos, intervenções, reabilitações, dentre outros. Eles são muito importantes para a implantação e avaliação das ações, visando a atenção integral à saúde auditiva na infância.
 						</p>

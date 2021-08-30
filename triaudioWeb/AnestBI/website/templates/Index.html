@@ -52,7 +52,7 @@
 							<div class="col">
 								<div class="top-wrap d-flex">
 									<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-phone"></span></div>
-									<div class="text"><span>Telefone</span><span>+55 51 33038826	</span></div>
+									<div class="text"><span>Telefone</span><span>+55 51 33038826</span></div>
 								</div>
 							</div>
 						</div>
@@ -72,7 +72,7 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav mr-auto">
 	        	<li class="nav-item active"><a href="/" class="nav-link">HOME</a></li>
-	        	<li class="nav-item"><a href="{% url 'login' %}" class="nav-link">TRIAUDIO</a></li>
+	        	<li class="nav-item"><a href="{% url 'account_login' %}" class="nav-link">TRIAUDIO</a></li>
 	        	<li class="nav-item"><a href="team.html" class="nav-link">Recursos</a></li>
 	        	<li class="nav-item"><a href="services.html" class="nav-link">Quem Somos</a></li>
 	        	<li class="nav-item"><a href="gallery.html" class="nav-link">Depoimentos</a></li>
@@ -95,7 +95,7 @@
 		          	<div class="text w-100">
 			            <h1 class="mb-4">Vamos fazer o Rio Grande do Sul ser referência em Triagem Auditiva Neonatal</h1>
 			            <p>Para mudar a realidade da Triagem Auditiva Neonatal precisamos do teu apoio e comprometimento neste banco de dados</p>
-						<p><a href="{% url 'login' %}"class="btn btn-primary">Login</a></p>
+						<p><a href="{% url 'account_login' %}"class="btn btn-primary">Login</a></p>
 		            </div>
 		          </div>
 		        </div>
@@ -109,7 +109,7 @@
 					<div class="text w-100">
 					  <h1 class="mb-4">Vamos fazer o Rio Grande do Sul ser referência em Triagem Auditiva Neonatal</h1>
 					  <p>Para mudar a realidade da Triagem Auditiva Neonatal precisamos do teu apoio e comprometimento neste banco de dados</p>
-					  <p><a href="{% url 'login' %}"class="btn btn-primary">Login</a></p>
+					  <p><a href="{% url 'account_login' %}"class="btn btn-primary">Login</a></p>
 				  </div>
 				</div>
 			  </div>
@@ -123,7 +123,7 @@
 					<div class="text w-100">
 					  <h1 class="mb-4">Vamos fazer o Rio Grande do Sul ser referência em Triagem Auditiva Neonatal</h1>
 					  <p>Para mudar a realidade da Triagem Auditiva Neonatal precisamos do teu apoio e comprometimento neste banco de dados</p>
-					  <p><a href="{% url 'login' %}"class="btn btn-primary">Login</a></p>
+					  <p><a href="{% url 'account_login' %}"class="btn btn-primary">Login</a></p>
 				  </div>
 				</div>
 			  </div>
@@ -137,7 +137,7 @@
 					<div class="text w-100">
 					  <h1 class="mb-4">Vamos fazer o Rio Grande do Sul ser referência em Triagem Auditiva Neonatal</h1>
 					  <p>Para mudar a realidade da Triagem Auditiva Neonatal precisamos do teu apoio e comprometimento neste banco de dados</p>
-					  <p><a href="{% url 'login' %}"class="btn btn-primary">Login</a></p>
+					  <p><a href="{% url 'account_login' %}"class="btn btn-primary">Login</a></p>
 				  </div>
 				</div>
 			  </div>
@@ -479,98 +479,60 @@
           <div class="col-md-3 ftco-animate">
             <div class="work img d-flex align-items-center" style="background-image: url({% static 'images/bb3.jpg' %});">
             	<a href="/images/bb3.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-	    					<span class="fa fa-expand"></span>
+	    					
 	    				</a>
-            	<div class="desc w-100 px-4 text-center pt-5 mt-5">
-	              <div class="text w-100 mb-3 mt-4">
-	              	<h2><a href="{% url 'login' %}">Login</a></h2>
-	              </div>
-              </div>
             </div>
           </div>
           <div class="col-md-3 ftco-animate">
             <div class="work img d-flex align-items-center" style="background-image: url({% static 'images/bb4.jpg' %});">
             	<a href="images/work-2.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-	    					<span class="fa fa-expand"></span>
+	    					
 	    				</a>
-            	<div class="desc w-100 px-4 text-center pt-5 mt-5">
-	              <div class="text w-100 mb-3 mt-4">
-	              	<h2><a href="{% url 'login' %}">Login</a></h2>
-	              </div>
-              </div>
             </div>
           </div>
           <div class="col-md-3 ftco-animate">
             <div class="work img d-flex align-items-center" style="background-image: url({% static 'images/bb5.jpg' %});">
             	<a href="{% url 'login' %}" class="icon image-popup d-flex justify-content-center align-items-center">
-	    					<span class="fa fa-expand"></span>
+	    					
 	    				</a>
-            	<div class="desc w-100 px-4 text-center pt-5 mt-5">
-	              <div class="text w-100 mb-3 mt-4">
-	              	<h2><a href="{% url 'login' %}">Login</a></h2>
-	              </div>
-              </div>
             </div>
           </div>
           <div class="col-md-3 ftco-animate">
             <div class="work img d-flex align-items-center" style="background-image: url({% static 'images/bb6.jpg' %});">
             	<a href="{% static 'images/work-4.jpg' %}" class="icon image-popup d-flex justify-content-center align-items-center">
-	    					<span class="fa fa-expand"></span>
+	    					
 	    				</a>
-            	<div class="desc w-100 px-4 text-center pt-5 mt-5">
-	              <div class="text w-100 mb-3 mt-4">
-	              	<h2><a href="{% url 'login' %}">Login</a></h2>
-	              </div>
-              </div>
             </div>
           </div>
 
           <div class="col-md-3 ftco-animate">
             <div class="work img d-flex align-items-center" style="background-image: url({% static 'images/bb7.jpg' %});">
             	<a href="images/work-5.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-	    					<span class="fa fa-expand"></span>
+	    					
 	    				</a>
-            	<div class="desc w-100 px-4 text-center pt-5 mt-5">
-	              <div class="text w-100 mb-3 mt-4">
-	              	<h2><a href="{% url 'login' %}">Login</a></h2>
-	              </div>
-              </div>
             </div>
           </div>
           <div class="col-md-3 ftco-animate">
             <div class="work img d-flex align-items-center" style="background-image: url({% static 'images/bb8.jpg' %});">
             	<a href="images/work-6.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-	    					<span class="fa fa-expand"></span>
+	    				
 	    				</a>
-            	<div class="desc w-100 px-4 text-center pt-5 mt-5">
-	              <div class="text w-100 mb-3 mt-4">
-	              	<h2><a href="{% url 'login' %}">Login</a></h2>
-	              </div>
-              </div>
+            	
             </div>
           </div>
           <div class="col-md-3 ftco-animate">
             <div class="work img d-flex align-items-center" style="background-image: url({% static 'images/bb9.jpg' %});">
             	<a href="images/work-7.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-	    					<span class="fa fa-expand"></span>
+	    					
 	    				</a>
-            	<div class="desc w-100 px-4 text-center pt-5 mt-5">
-	              <div class="text w-100 mb-3 mt-4">
-	              	<h2><a href="{% url 'login' %}">Login</a></h2>
-	              </div>
-              </div>
             </div>
           </div>
           <div class="col-md-3 ftco-animate">
             <div class="work img d-flex align-items-center" style="background-image: url({% static 'images/bb1.jpg' %});">
             	<a href="images/work-8.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-	    					<span class="fa fa-expand"></span>
+	    					
 	    				</a>
-            	<div class="desc w-100 px-4 text-center pt-5 mt-5">
-	              <div class="text w-100 mb-3 mt-4">
-	              	<h2><a href="{% url 'login' %}">Login</a></h2>
-	              </div>
-              </div>
+            
             </div>
           </div>
         </div>
