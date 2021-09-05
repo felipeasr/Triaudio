@@ -1,4 +1,5 @@
 {% load static %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,6 +23,11 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'src/plugins/datatables/css/dataTables.bootstrap4.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'src/plugins/datatables/css/responsive.bootstrap4.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'vendors/styles/style.css' %}">
+  <link rel="stylesheet" href="{% static 'style/partials/page-profissional.css' %}">
+  <link rel="stylesheet" href="{% static 'style/partials/forms2.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'fa/css/all.min.css' %}">
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
@@ -32,8 +38,7 @@
 
 		gtag('config', 'UA-119386393-1');
 	</script>
-  <script src="{% static 'jquery-3.6.0.min.js' %}"></script>
-  <script src="{% static 'jquery.mask.js' %}"></script>
+  
 </head>
 <body>
 	
@@ -226,316 +231,180 @@
 
 	<div class="main-container">
     <div class="pd-20 card-box mb-30">
-    <form>			
-      <form action="{% url 'novopaciente' %}" mathod ="post"> 
-     
+    <form name="form"  id="form" method="post" action="/salvarpac/">			
+		
+		{% csrf_token %}
         <legend>
           Dados Neonato:
         </legend>
         
         <div class="mb-3">
-          <label for="formGroupExampleInput" class="form-label"><h6>Nome:</h6></label>
-          <input type="name" class="form-control" name="nomeNeonato" placeholder="Nome do Neonato" required value="">
+			<label class="form-label"><h6>Nome:</h6></label>
+			{{form.nomeNeonato|as_crispy_field}}
         </div>
         <div class="mb-3">
           <label for="formGroupExampleInput" class="form-label"><h6>Sobrenome:</h6></label>
-          <input type="name" class="form-control" id="sobreNeonato" placeholder="Sobrenome do Neonato" required value="">
+            {{form.sobreNeonato |as_crispy_field}}
+          
         </div>
         
         <label for="sexo"><h6>Tipo Parto:</h6></label>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="Parto" id="exampleRadios1" value="Normal">
-          <label class="form-check-label" for="exampleRadios1">
-          Normal
-          </label>
+        <div class="Select2 multi select">
+          {{form.Parto |as_crispy_field}}
         </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="Parto" id="exampleRadios2" value="Cesárea">
-          <label class="form-check-label" for="exampleRadios2">
-          Cesárea
-          </label>
-        </div>
-        <label for="sexo"><h6>Sexo:</h6></label>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="sexo" id="exampleRadios1" value="Masculino">
-        <label class="form-check-label" for="Radios1">
-          Masculino
-        </label>
-        </div>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="sexo" id="exampleRadios2" value="Feminino">
-        <label class="form-check-label" for="Radios2">
-          Feminino
-        </label>
-        </div>
-        <label for="sexo"><h6> APGAR 1º minuto</h6></label>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="apgar1" id="exampleRadios1" value="option3" >
-        <label class="form-check-label" for="Radios1">
-        1 APGAR
-        </label>
-        </div>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="apgar1" id="exampleRadios2" value="option4">
-        <label class="form-check-label" for="Radios2">
-        2 APGAR
-        </label>
-        </div>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="apgar1" id="exampleRadios2" value="option4">
-        <label class="form-check-label" for="Radios2">
-        3 APGAR
-        </label>
-        </div>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="apgar1" id="exampleRadios2" value="option4">
-        <label class="form-check-label" for="Radios2">
-        4 APGAR
-        </label>
-        </div>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="apgar1" id="exampleRadios2" value="option4">
-        <label class="form-check-label" for="Radios2">
-        5 APGAR
-        </label>
-        </div>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="apgar1" id="exampleRadios2" value="option4">
-        <label class="form-check-label" for="Radios2">
-        6 APGAR
-        </label>
-        </div>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="apgar1" id="exampleRadios2" value="option4">
-        <label class="form-check-label" for="Radios2">
-        7 APGAR
-        </label>
-        </div>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="apgar1" id="exampleRadios2" value="option4">
-        <label class="form-check-label" for="Radios2">
-        8 APGAR
-        </label>
-        </div>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="apgar1" id="exampleRadios2" value="option4">
-        <label class="form-check-label" for="Radios2">
-        9 APGAR
-        </label>
-        </div>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="apgar1" id="exampleRadios2" value="option4">
-        <label class="form-check-label" for="Radios2">
-        10 APGAR
-        </label>
+        <div class="mb-3"> 
+          <label for="sexo"><h6>Sexo:</h6></label>
+          {{form.sexo |as_crispy_field}}
+          
         </div>
         
-        <label for="sexo"><h6> APGAR 1º minuto</h6></label>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="1APGAR" id="exampleRadios1" value="1APGAR" >
-        <label class="form-check-label" for="Radios1">
-        1 APGAR
-        </label>
+        
+        <label for="apgar"><h6> APGAR 1º minuto</h6></label>
+        <div class="form"> 
+          {{form.apgar|as_crispy_field}}
         </div>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="2APGAR" id="exampleRadios2" value="2APGAR">
-        <label class="form-check-label" for="Radios2">
-        2 APGAR
-        </label>
-        </div>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="3APGAR" id="exampleRadios2" value="3APGAR">
-        <label class="form-check-label" for="Radios2">
-        3 APGAR
-        </label>
-        </div>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="4APGAR" id="exampleRadios2" value="4APGAR">
-        <label class="form-check-label" for="Radios2">
-        4 APGAR
-        </label>
-        </div>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="5APGAR" id="exampleRadios2" value="5APGAR">
-        <label class="form-check-label" for="Radios2">
-        5 APGAR
-        </label>
-        </div>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="6APGAR" id="exampleRadios2" value="6APGAR">
-        <label class="form-check-label" for="Radios2">
-        6 APGAR
-        </label>
-        </div>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="7APGAR" id="exampleRadios2" value="7APGAR">
-        <label class="form-check-label" for="Radios2">
-        7 APGAR
-        </label>
-        </div>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="8APGAR" id="exampleRadios2" value="8APGAR">
-        <label class="form-check-label" for="Radios2">
-        8 APGAR
-        </label>
-        </div>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="9APGAR" id="exampleRadios2" value="9APGAR">
-        <label class="form-check-label" for="Radios2">
-        9 APGAR
-        </label>
-        </div>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="10APGAR" id="exampleRadios2" value="10APGAR">
-        <label class="form-check-label" for="Radios2">
-        10 APGAR
-        </label>
+        
+        <label for="apgar"><h6> APGAR 5º minuto</h6></label>
+        <div class="form"> 
+          {{form.apgar2|as_crispy_field}}
         </div>
       
-        <label for="sexo"><h6>IRDA (Indicador de Risco para Deficiência Auditiva): </h6></label>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="irda" id="exampleRadios1" value="option3">
-        <label class="form-check-label" for="Radios1">
-        Não
-        </label>
-        </div>
-        
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="irda" id="exampleRadios2" value="option4">
-        <label class="form-check-label" for="Radios2">
-        Sim
-        </label>
-        </div>
+        <label for="irda"><h6>IRDA (Indicador de Risco para Deficiência Auditiva): </h6></label>
+          {{form.irda|as_crispy_field}}
         <div>
-          <div class="form-group">
-              <label>Se sim, selecione:</label>
-              <select class="custom-select2 form-control" name="state" style="width: 100%; height: 38px;">
-                  <optgroup>
-                      <option value="text em branco"></option>
-                      <option value="História familiar de perda auditiva">História familiar de perda auditiva</option>
-                      <option value="Terapia Intensiva Neonatal (mais de 5 dias)">Terapia Intensiva Neonatal (mais de 5 dias)</option>
-                      <option value="HI">Hiperbilirrubinemia com exsanguineotransfusão, independentemente do tempo de internação</option>
-                      <option value="HI">Asfixia ou Encefalopatia Isquêmica Hipóxica </option>
-                      <option value="HI">Oxigenação por membrana extracorpórea</option>
-                      <option value="HI">Infecção intra-uterina: herpes</option>
-                      <option value="HI">Infecção intra-uterina: rubéola</option>
-                      <option value="HI"> Infecção intra-uterina: sífilis</option>
-                      <option value="HI">Infecção intra-uterina: toxoplasmose</option>
-                      <option value="HI">Infecção intra-uterina: citomegalovírus</option>
-                      <option value="HI">Infecção intra-uterina: zika vírus</option>
-                      <option value="HI">Malformações craniofaciais: microtia / atresia</option>
-                      <option value="HI">Malformações craniofaciais: displasia de orelha</option>
-                      <option value="HI">Malformações craniofaciais: fissuras orofaciais </option>
-                      <option value="HI">Malformações craniofaciais: white forelock</option>
-                      <option value="HI">Malformações craniofaciais: microftalmia</option>
-                      <option value="HI">Microcefalia congênita</option>
-                      <option value="HI">Hidrocefalia congênita ou adquirida</option>
-                      <option value="HI">Anormalidades do osso temporal </option>
-                      <option value="HI">Síndromes  identificadas com limiares auditivos atípicos</option>
-                      <option value="HI">Perinatal ou Pós-natal</option>
-                      <option value="HI">Infecções positivas para cultura associadas à perda auditiva sensorioneural, incluindo meningite ou encefalite bacteriana e viral confirmada (especialmente vírus do herpes e varicela)</option>
-                      <option value="HI">Eventos associados à perda auditiva: traumatismo cranioencefálico significativo, especialmente fraturas da base do crânio / osso temporal</option>
-                      <option value="HI">Eventos associados à perda auditiva: quimioterapia </option>
-                      <option value="HI">Preocupação do cuidador em relação à audição, fala, linguagem, atraso no desenvolvimento e / ou regressão do desenvolvimento</option>
-                      <option value="HI">Outro</option>
-                      
-                  </optgroup>
-                  
-              </select>
-          </div>
-      </div>
+			<div class="form-group">
+				<label>Se sim, selecione:</label>
+				<select class="custom-select2 form-control" name="state" style="width: 100%; height: 38px;">
+					<optgroup>
+						<option value="text em branco"></option>
+						<option value="História familiar de perda auditiva">História familiar de perda auditiva</option>
+						<option value="Terapia Intensiva Neonatal (mais de 5 dias)">Terapia Intensiva Neonatal (mais de 5 dias)</option>
+						<option value="HI">Hiperbilirrubinemia com exsanguineotransfusão, independentemente do tempo de internação</option>
+						<option value="HI">Asfixia ou Encefalopatia Isquêmica Hipóxica </option>
+						<option value="HI">Oxigenação por membrana extracorpórea</option>
+						<option value="HI">Infecção intra-uterina: herpes</option>
+						<option value="HI">Infecção intra-uterina: rubéola</option>
+						<option value="HI"> Infecção intra-uterina: sífilis</option>
+						<option value="HI">Infecção intra-uterina: toxoplasmose</option>
+						<option value="HI">Infecção intra-uterina: citomegalovírus</option>
+						<option value="HI">Infecção intra-uterina: zika vírus</option>
+						<option value="HI">Malformações craniofaciais: microtia / atresia</option>
+						<option value="HI">Malformações craniofaciais: displasia de orelha</option>
+						<option value="HI">Malformações craniofaciais: fissuras orofaciais </option>
+						<option value="HI">Malformações craniofaciais: white forelock</option>
+						<option value="HI">Malformações craniofaciais: microftalmia</option>
+						<option value="HI">Microcefalia congênita</option>
+						<option value="HI">Hidrocefalia congênita ou adquirida</option>
+						<option value="HI">Anormalidades do osso temporal </option>
+						<option value="HI">Síndromes  identificadas com limiares auditivos atípicos</option>
+						<option value="HI">Perinatal ou Pós-natal</option>
+						<option value="HI">Infecções positivas para cultura associadas à perda auditiva sensorioneural, incluindo meningite ou encefalite bacteriana e viral confirmada (especialmente vírus do herpes e varicela)</option>
+						<option value="HI">Eventos associados à perda auditiva: traumatismo cranioencefálico significativo, especialmente fraturas da base do crânio / osso temporal</option>
+						<option value="HI">Eventos associados à perda auditiva: quimioterapia </option>
+						<option value="HI">Preocupação do cuidador em relação à audição, fala, linguagem, atraso no desenvolvimento e / ou regressão do desenvolvimento</option>
+						<option value="HI">Outro</option>
+						
+					</optgroup>
+					
+				</select>
+			</div>
+       </div>
       
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Óbito" id="defaultCheck1">
-          <label class="form-check-label" for="defaultCheck1">
-           <h6>Óbito</h6> 
-          </label>
+			<label class="form-check-label" for="defaultCheck1">
+				<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="obito" aria-label="Óbito">
+				<label  class="form-check-label" for="obito"><h6>Óbito</h6></label>
+				
+			   </label>
+         
         </div>
 
         <legend><h6>Observações:</h6></legend>
-					<textarea cols="100"></textarea>
+		<textarea cols="50" ></textarea>
+			
           <div class="pd-20 card-box mb-30">
   
             <legend>
               Dados Responsável:
               </legend>
+              
               <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label">Nome completo do responsável:</label>
-              <input type="nameResponsavel" class="form-control" id="nomeResponsavel" placeholder="Nome do Responsável" value="">
+              {{form.nomeResponsavel|as_crispy_field}}
               </div>
               <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label">CPF do Responsável:</label>
-              <input type="text" class="form-control" id="cpf" name=""cpf  maxlength="14" placeholder="CPF" value="" required >
+              {{form.cpf_responsavel|as_crispy_field}}
               </div>
               <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label">E-mail:</label>
-              <input type="email" class="form-control" id="email" placeholder="E-mail" value="">
+              {{form.email_responsavel|as_crispy_field}}
               </div>
               <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label">Celular 1:</label>
-              <input type="text" class="form-control" id="phone" name="phone" maxlength="15"placeholder="Telefone" value="" required>
+              {{form.Telefone_respnsavel|as_crispy_field}}
               </div>
               <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label">Celular 2:</label>
-              <input type="text" class="form-control" id="tel" name="tel" maxlength="15" placeholder="Telefone" value="" required>
+              {{form.Telefone_respnsavel2|as_crispy_field}}
               </div>
             </div>
-            <div class="pd-20 card-box mb-30" >
-              <form action="{% url 'novopaciente' %}" mathod ="post">
-                {% csrf_token %}
-                <legend>
-                  Dados de Endereço:
-                  </legend>
-                  <div class="row">
-                    <div class="col-md-4 col-sm-12">
-                      <div class="form-group">
-                        <label>CEP:</label>
-                        <input type="number" id="cep" class="form-control" maxlength="8" value="">
-                      </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                      <div class="form-group">
-                        <label>Endereço:</label>
-                        <input type="text" id="logradouro" class="form-control" value="">
-                      </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                      <div class="form-group">
-                        <label>Número:</label>
-                        <input type="text" id="numero" class="form-control" value="">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-3 col-sm-12">
-                      <div class="form-group">
-                        <label>Bairro:</label>
-                        <input type="text" id="bairro" class="form-control" value="">
-                      </div>
-                    </div>
-                    <div class="col-md-3 col-sm-12">
-                      <div class="form-group">
-                        <label>Cidade:</label>
-                        <input type="text" id="cidade" class="form-control" value="">
-                      </div>
-                    </div>
-                    <div class="col-md-3 col-sm-12">
-                      <div class="form-group">
-                        <label>Estado:</label>
-                        <input type="text" id="uf" class="form-control" value="">
-                      </div>
-                    </div>
-                    <div class="col-md-3 col-sm-12">
-                      <div class="form-group">
-                        <label>Complemento:</label>
-                        <input type="text" id="complemento" class="form-control" value="">
-                      </div>
-                    </div>
-                  </div>
-                  <button  type="submit" class="btn btn-primary btn-sm">Salvar</button>
-       
-              </form>
-            </div>
+          
+			<div class="pd-20 card-box mb-30" >
+				  <legend>
+					Dados de Endereço:
+					</legend>
+					<div class="row">
+					  <div class="col-md-4 col-sm-12">
+						<div class="form-group">
+						  <label>CEP:</label>
+						  {{form.cep|as_crispy_field}}
+						</div>
+					  </div>
+					  <div class="col-md-4 col-sm-12">
+						<div class="form-group">
+						  <label>Endereço:</label>
+						  {{form.Endereco|as_crispy_field}}
+						</div>
+					  </div>
+					  <div class="col-md-4 col-sm-12">
+						<div class="form-group">
+						  <label>Número:</label>
+						  {{form.Numero|as_crispy_field}}
+						</div>
+					  </div>
+					</div>
+					<div class="row">
+					  <div class="col-md-3 col-sm-12">
+						<div class="form-group">
+						  <label>Bairro:</label>
+						  {{form.Bairro|as_crispy_field}}
+						</div>
+					  </div>
+					  <div class="col-md-3 col-sm-12">
+						<div class="form-group">
+						  <label>Cidade:</label>
+						  {{form.cidade|as_crispy_field}}
+						</div>
+					  </div>
+					  <div class="col-md-3 col-sm-12">
+						<div class="form-group">
+						  <label>Estado:</label>
+						  {{form.uf|as_crispy_field}}
+						</div>
+					  </div>
+					  <div class="col-md-3 col-sm-12">
+						<div class="form-group">
+						  <label>Complemento:</label>
+						  {{form.complemento|as_crispy_field}}
+						</div>
+					  </div>
+					</div>
+					<button  type="submit" class="btn btn-primary btn-sm">Salvar</button>
+					
+					
+				
+			  </div>
    </div>
   </form>
    
@@ -556,7 +425,7 @@
 	<script src="{% static 'vendors/scripts/dashboard.js' %}"></script>
  
   <script >
-    const tel = document.getElementById('tel') // Seletor do campo de telefone
+    const tel = document.getElementById('id_Telefone_respnsavel2') // Seletor do campo de telefone
 
 tel.addEventListener('keypress', (e) => mascaraTelefone(e.target.value)) // Dispara quando digitado no campo
 tel.addEventListener('change', (e) => mascaraTelefone(e.target.value)) // Dispara quando autocompletado o campo
@@ -571,7 +440,7 @@ const mascaraTelefone = (valor) => {
 
   </script>
   <script >
-    const telefone = document.getElementById('phone') // Seletor do campo de telefone
+    const telefone = document.getElementById('id_Telefone_respnsavel') // Seletor do campo de telefone
 
 telefone.addEventListener('keypress', (e) => mascara(e.target.value)) // Dispara quando digitado no campo
 telefone.addEventListener('change', (e) => mascara(e.target.value)) // Dispara quando autocompletado o campo
@@ -584,7 +453,7 @@ const mascara = (valor) => {
 }
   </script>
   <script>
-    const cpf = document.getElementById('cpf') // Seletor do campo de CPF
+    const cpf = document.getElementById('id_cpf_responsavel') // Seletor do campo de CPF
         
     cpf.addEventListener('keypress', (e) => cpfmascara(e.target.value)) // Dispara quando digitado no campo
     cpf.addEventListener('change', (e) => cpfmascara(e.target.value)) 
@@ -598,7 +467,7 @@ const mascara = (valor) => {
   </script>
   
   <script type="text/javascript">
-		$("#cep").focusout(function(){
+		$("#id_cep").focusout(function(){
 			//Início do Comando AJAX
 			$.ajax({
 				//O campo URL diz o caminho de onde virá os dados
@@ -614,13 +483,13 @@ const mascara = (valor) => {
 				success: function(resposta){
 					//Agora basta definir os valores que você deseja preencher
 					//automaticamente nos campos acima.
-					$("#logradouro").val(resposta.logradouro);
-					$("#bairro").val(resposta.bairro);
-					$("#cidade").val(resposta.localidade);
-					$("#uf").val(resposta.uf);
+					$("#id_Endereco").val(resposta.logradouro);
+					$("#id_Bairro").val(resposta.bairro);
+					$("#id_cidade").val(resposta.localidade);
+					$("#id_uf").val(resposta.uf);
 					//Vamos incluir para que o Número seja focado automaticamente
 					//melhorando a experiência do usuário
-					$("#numero").focus();
+					$("#id_numero").focus();
 				}
 			});
 		});

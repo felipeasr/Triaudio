@@ -1,7 +1,8 @@
-from django.shortcuts import render
-
-
-
+from django.shortcuts import render ,redirect
+from website.forms import usuariofrom , pacienteform
+from .models import paciente,usuario
+from django.http import HttpResponseRedirect, HttpResponse
+from django.template import RequestContext
 def Index(request):
     return render(request, 'Index.html', {})
 
@@ -46,17 +47,35 @@ def reteste(request):
 def medidasacusticas(request):
     return render(request, 'medidasacusticas.html',{})
 def novopaciente(request):
-        return render(request, 'novopaciente.html', {})
+        data = {}
+        data['form'] = pacienteform 
+        return render(request, 'novopaciente.html', data)
 
+def salvarpac(request):
+    if request.method == 'POST':
+        form = pacienteform(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('dash')
 def cadastrogeral(request):
-
-    return render(request,'cadastrogeral.html',{})
+    context = {'cadastrogeral' : paciente.objects.all()}
+    return render(request,'cadastrogeral.html',context)
 
 def login(request):
     return render(request,'account/login.html',{})
 
 def profissional(request):
-    return render(request,'Profissional.html',{})
+    data = {}
+    data['form'] = usuariofrom
+    return render(request,'Profissional.html',data)
+def salvarprof(request):
+     if request.method == 'POST':
+        form = usuariofrom(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('account_signup')
+
+    
 #############################################################codigo exemplo#######################################
 def cadio(request):
     ##<!--SCORE DE LEE-->

@@ -1,13 +1,14 @@
-{% extends 'base2.html' %}
+{% extends 'base3.html' %}
 
 {% load crispy_forms_tags %}
 
 {% block title %}Cadastro{% endblock %}
 
 {% block content %}
-    <h2>Seus Dados Para Login</h2>
+
     <form method="post">
         {% csrf_token %}
+        
         {{ form|crispy }}
         <ul>A senha deverá ter no mínimo 8 caracteres e contar com, no mínimo, um(a):</ul>
                 <ol>- Letra Maiúscula;</ol>
